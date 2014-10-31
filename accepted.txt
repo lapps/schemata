@@ -1,0 +1,18 @@
+/* Script used to generate an example response to a valid login request. */
+username 'keith'
+resourceId 'MASC-3.0.0'
+timestamp System.currentTimeMillis()
+uuid UUID.randomUUID().toString()
+restrictions([
+	{
+		name 'CC-BY'
+		description 'Creative Commons Attribution'
+		uri 'https://creativecommons.org/licenses/by/3.0/'
+	},
+	{
+		name 'No Evil'
+		description 'You agree to do Good not Evil.'
+		uri 'http://www.json.org/license.html'
+	}
+])
+

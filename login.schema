@@ -1,0 +1,14 @@
+/**
+ * The layout of JSON documents sent as part of a login request
+ */
+ 
+title 'LAPPS Login Request'
+description 'The JSON document sent to a protected resource when a user wishes to connect.'
+type object
+additionalProperties false
+properties {
+	username { type string }
+	password { type string }
+	resourceId { type string }
+}
+required 'username', 'password', 'resourceId'

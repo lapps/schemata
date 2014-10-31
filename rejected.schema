@@ -1,0 +1,14 @@
+/*
+ * A response to a login request.
+ */
+ 
+title 'LAPPS Authorization Rejected'
+description "The response to an invalid login request."
+type object
+additionalProperties false
+properties {
+	code { type integer }
+	reason { type string }
+}
+required 'code', 'reason'
+	
