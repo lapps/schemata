@@ -16,6 +16,19 @@ lif: lif.json
 
 get: get.json
 
+list: list.json
+
+size: size.json
+
+getmetadata: getmetadata.json
+
+execute: execute.json
+
+container: container.json
+
+clean:
+	rm *.json
+	
 #token: 
 #	$(JS) -i token.schema -o token.json
 
