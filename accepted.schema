@@ -9,7 +9,7 @@ properties {
 	username { type string }
 	resourceId { type string }
 	timestamp { type integer }
-	uuid { type string }
+	token { type string }
 	restrictions {
 		type array
 		items { $ref '#/definitions/restriction' }

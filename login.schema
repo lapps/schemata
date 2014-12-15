@@ -7,8 +7,7 @@ description 'The JSON document sent to a protected resource when a user wishes t
 type object
 additionalProperties false
 properties {
-	username { type string }
-	password { type string }
-	resourceId { type string }
+	resource { type string }
+	callback { type string; format 'uri' }
 }
-required 'username', 'password', 'resourceId'
+required 'resource', 'callback'

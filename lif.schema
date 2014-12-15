@@ -76,12 +76,15 @@ definitions {
 			'@type' { type string }
 			type { type string }
 			label { type string }
-			start { type integer; minimum 0 }
-			end { type integer; minimum 0 }
+			start { 
+				type integer 
+				minimum(-1) 
+			}
+			end { type integer; minimum(-1) }
 			features { $ref '#/definitions/map' }
 			metadata { $ref '#/definitions/map' }
 		}
-        required 'id', 'label'
+        required 'id', 'type'
         additionalProperties false
     }
 }

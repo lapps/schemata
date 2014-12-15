@@ -2,7 +2,7 @@
 username 'keith'
 resourceId 'MASC-3.0.0'
 timestamp System.currentTimeMillis()
-uuid UUID.randomUUID().toString()
+token UUID.randomUUID().toString()
 restrictions([
 	{
 		name 'CC-BY'
