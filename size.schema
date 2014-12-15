@@ -1,0 +1,11 @@
+include 'Config.groovy'
+
+title 'LAPPS Size Request'
+description 'Requests the number of artifacts managed by a LAPPS DataSource'
+type object
+additionalProperties false
+properties {
+	discriminator { type string; format 'uri' }
+	token { $ref schema.token }
+}
+required 'discriminator'

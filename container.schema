@@ -1,0 +1,12 @@
+include 'Config.groovy'
+
+title 'LIF Container'
+description 'A JSON Container object in the LAPPS Interchange Format.'
+type object
+additionalProperties false
+properties {
+	discriminator { type string; format 'uri' }
+	token { $ref schema.token }
+	payload { $ref schema.lif }
+}
+required 'discriminator', 'payload'

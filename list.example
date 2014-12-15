@@ -1,0 +1,10 @@
+discriminator 'http://vocab.lappsgrid.org/ns/list'
+token {
+	uuid UUID.randomUUID().toString()
+	timestamp System.currentTimeMillis()
+	issuer 'http://www.anc.org'
+}
+payload {
+	start 0
+	end 100
+}

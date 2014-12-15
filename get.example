@@ -1,0 +1,6 @@
+discriminator 'http://vocab.lappsgrid.org/ns/get'
+token {
+	uuid UUID.randomUUID().toString()
+	issuer 'http://www.anc.org'
+}
+payload 'MASC3-0001'

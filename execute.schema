@@ -1,0 +1,13 @@
+include 'Config.groovy'
+
+title 'LAPPS Execute Method Schema'
+description 'The format of the JSON documents submitted to the execute method of a LAPPS service.'
+type object
+additionalProperties false
+properties {
+	discriminator { type string; format 'uri' }
+	token { $ref schema.token }
+	payload { $ref schema.container }	
+}
+required 'discriminator', 'payload'
+

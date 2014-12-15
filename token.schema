@@ -1,0 +1,15 @@
+/*
+ * The JSON representation of Token objects exchanged by LAPPS services.
+ */
+
+title 'LAPPS Tokens'
+description 'The JSON representation of access tokens exchanged by LAPPS web services.'
+type object
+additionalProperties false
+properties {
+	uuid { type string; format 'uuid' }
+	issuer { type string }
+	timestamp { type integer }
+	lifetime { type integer }
+}
+required 'uuid'
