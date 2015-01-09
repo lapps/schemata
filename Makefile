@@ -1,34 +1,45 @@
 
 JS=jsonc -d 4 -p
+DEST=/home/www/anc/LAPPS/vocab/schema
+SCHEMATA=token.json lif.json get.json list.json size.json getmetadata.json execute.json container.json
 
 #.schema .json:
 #	jsonc -d 4 -p -i $@
 	
-%.schema %.json:
+%.json: %.schema
 	jsonc -d 4 -p -i $*.schema -o $*.json
-	
-	
-all: token lif get
+		
+all: token lif get list size getmetadata execute container
 
-token: token.json
+token: token.schema
 
-lif: lif.json
+lif: lif.schema
 
-get: get.json
+get: get.schema
 
-list: list.json
+list: list.schema
 
-size: size.json
+size: size.schema
 
-getmetadata: getmetadata.json
+getmetadata: getmetadata.schema
 
-execute: execute.json
+execute: execute.schema execute.json
 
-container: container.json
+container: container.schema
 
 clean:
-	rm *.json
-	
+	rm $(SCHEMATA)
+
+upload: $(SCHEMATA)
+	anc-put lif.json $(DEST)
+	anc-put token.json $(DEST)
+	anc-put container.json $(DEST)
+	anc-put get.json $(DEST)/action
+	anc-put list.json $(DEST)/action
+	anc-put size.json $(DEST)/action
+	anc-put getmetadata.json $(DEST)/action
+	anc-put execute.json $(DEST)/action
+			
 #token: 
 #	$(JS) -i token.schema -o token.json
 

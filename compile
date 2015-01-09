@@ -1,0 +1,4 @@
+
+for file in `ls *.schema` ; do
+	echo $file
+done
