@@ -6,7 +6,6 @@ type object
 additionalProperties false
 properties {
 	discriminator { type string; format 'uri' }
-	token { $ref schema.token }
 	payload { $ref schema.lif}	
 }
 required 'discriminator', 'payload'

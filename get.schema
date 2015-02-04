@@ -3,7 +3,6 @@
  */
 
 include 'Config.groovy'
-//def schemata = load_config()
 
 title "LAPPS DataSource GET request"
 description "A GET request sent to a LAPPS DataSource to retrieve a single artifact"
@@ -11,7 +10,6 @@ type object
 additionalProperties false
 properties {
 	discriminator { type string; format 'uri' }
-	token { $ref schema.token }
 	payload { type string }
 }
 required 'discriminator', 'payload'

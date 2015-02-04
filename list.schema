@@ -1,10 +1,9 @@
 include 'Config.groovy'
 
 title "LAPPS LIST Request"
-description "LIST request sent to LAPPS DataSource to obtain a list of artifact ID values."
+description "LIST request sent to a LAPPS DataSource to obtain a list of ID values."
 type object
 
-//dingleBerries 'Yes please'
 type object
 additionalProperties false
 properties {
@@ -12,7 +11,6 @@ properties {
 		type string
 		format 'uri'
 	}
-	token { $ref schema.token }
 	payload {
 		type object
 		additionalProperties false

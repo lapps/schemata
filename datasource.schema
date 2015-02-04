@@ -1,5 +1,5 @@
 /*
- * The LAX Schema for metadata returned by DataSource.getMetadata().
+ * The LAX Schema for metadata returned by DataSources.
  *
  * version: 1.0.0
  */

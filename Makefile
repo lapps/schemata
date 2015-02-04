@@ -1,44 +1,57 @@
 
 JS=jsonc -d 4 -p
 DEST=/home/www/anc/LAPPS/vocab/schema
-SCHEMATA=token.json lif.json get.json list.json size.json getmetadata.json execute.json container.json
+SCHEMATA=lif-schema.json get-schema.json list-schema.json size-schema.json \
+	execute-schema.json container-schema.json datasource-schema.json service-schema.json
 
 #.schema .json:
 #	jsonc -d 4 -p -i $@
 	
-%.json: %.schema
-	jsonc -d 4 -p -i $*.schema -o $*.json
+.schema.json:
+	echo $@
+	echo $*
+#	jsonc -d 4 -p -i $*.schema -o $*-schema.json
 		
-all: token lif get list size getmetadata execute container
+all: lif get list size execute container datasource service
 
-token: token.schema
+test:
+	echo $(SCHEMATA)
+	
+lif: 
+	$(JS) -i $@.schema -o $@-schema.json
 
-lif: lif.schema
+get: 
+	$(JS) -i $@.schema -o $@-schema.json
 
-get: get.schema
+list: 
+	$(JS) -i $@.schema -o $@-schema.json
 
-list: list.schema
-
-size: size.schema
-
-getmetadata: getmetadata.schema
+size: 
+	$(JS) -i $@.schema -o $@-schema.json
 
 execute: execute.schema execute.json
+	$(JS) -i $@.schema -o $@-schema.json
 
-container: container.schema
+container:
+	$(JS) -i $@.schema -o $@-schema.json
+
+datasource:
+	$(JS) -i $@.schema -o $@-schema.json
+
+service: 
+	$(JS) -i $@.schema -o $@-schema.json
 
 clean:
 	rm $(SCHEMATA)
 
 upload: $(SCHEMATA)
-	anc-put lif.json $(DEST)
-	anc-put token.json $(DEST)
-	anc-put container.json $(DEST)
-	anc-put get.json $(DEST)/action
-	anc-put list.json $(DEST)/action
-	anc-put size.json $(DEST)/action
-	anc-put getmetadata.json $(DEST)/action
-	anc-put execute.json $(DEST)/action
+	anc-put lif-schema.json $(DEST)
+	anc-put token-schema.json $(DEST)
+	anc-put container-schema.json $(DEST)
+	anc-put get-schema.json $(DEST)/action
+	anc-put list-schema.json $(DEST)/action
+	anc-put size-schema.json $(DEST)/action
+	anc-put execute-schema.json $(DEST)/action
 			
 #token: 
 #	$(JS) -i token.schema -o token.json

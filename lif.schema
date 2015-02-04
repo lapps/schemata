@@ -84,7 +84,7 @@ definitions {
 			features { $ref '#/definitions/map' }
 			metadata { $ref '#/definitions/map' }
 		}
-        required 'id', 'type'
+        required 'id', '@type'
         additionalProperties false
     }
 }
