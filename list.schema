@@ -4,7 +4,6 @@ title "LAPPS LIST Request"
 description "LIST request sent to a LAPPS DataSource to obtain a list of ID values."
 type object
 
-type object
 additionalProperties false
 properties {
 	discriminator {

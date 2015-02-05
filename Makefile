@@ -7,16 +7,26 @@ SCHEMATA=lif-schema.json get-schema.json list-schema.json size-schema.json \
 #.schema .json:
 #	jsonc -d 4 -p -i $@
 	
-.schema.json:
-	echo $@
-	echo $*
-#	jsonc -d 4 -p -i $*.schema -o $*-schema.json
-		
+
+help:
+	@echo
+	@echo "Goals"
+	@echo
+	@echo "       all : generates all JSON Schema"
+	@echo "       lif : LIF schema"
+	@echo "       get : DataSource GET requests"
+	@echo "      list : DataSource LIST requests"
+	@echo "      size : DataSource SIZE requests"
+	@echo "   execute : WebService execute requests"
+	@echo " container : a LIF container"
+	@echo "datasource : metadata returned by DataSources"
+	@echo "   service : metatdata returnd by WebServices"
+	@echo "     clean : deletes all generated schemata"
+	@echo "    upload : uploads schemata to the vocab web site"
+	@echo			
+			
 all: lif get list size execute container datasource service
 
-test:
-	echo $(SCHEMATA)
-	
 lif: 
 	$(JS) -i $@.schema -o $@-schema.json
 
@@ -29,7 +39,7 @@ list:
 size: 
 	$(JS) -i $@.schema -o $@-schema.json
 
-execute: execute.schema execute.json
+execute:
 	$(JS) -i $@.schema -o $@-schema.json
 
 container:
@@ -45,14 +55,8 @@ clean:
 	rm $(SCHEMATA)
 
 upload: $(SCHEMATA)
-	anc-put lif-schema.json $(DEST)
-	anc-put token-schema.json $(DEST)
-	anc-put container-schema.json $(DEST)
-	anc-put get-schema.json $(DEST)/action
-	anc-put list-schema.json $(DEST)/action
-	anc-put size-schema.json $(DEST)/action
-	anc-put execute-schema.json $(DEST)/action
-			
+	./upload.sh
+	
 #token: 
 #	$(JS) -i token.schema -o token.json
 

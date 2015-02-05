@@ -32,7 +32,7 @@ definitions {
 		format 'uri'
 	}
 	arrayOfString {
-		type listing
+		type string
 		items {
 			type string
 		}
