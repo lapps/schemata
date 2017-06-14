@@ -9,13 +9,16 @@ description 'LAX Schema for metadata returned by DataSources.'
 additionalProperties false
 type object
 properties {
+	$schema { $ref '#/definitions/uri' }
 	name { type string }
 	vendor { $ref '#/definitions/uri' }	
 	version { type string }
 	description { type string }
-	format { $ref '#/definitions/arrayOfStrings' }
-	allow { type string }
-	license { type string }
+	format { $ref '#/definitions/arrayOfString' }
+	allow { $ref '#/definitions/uri' }
+	license { $ref '#/definitions/uri' }
+	language { $ref '#/definitions/arrayOfString' }
+	encoding { type string }		
 	annotations {
 		type array
 		items {
@@ -32,7 +35,7 @@ definitions {
 		format 'uri'
 	}
 	arrayOfString {
-		type string
+		type array
 		items {
 			type string
 		}

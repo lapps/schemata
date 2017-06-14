@@ -10,6 +10,10 @@ definitions {
 	encoding {
 		type string
 	}
+	uri {
+		type string
+		format 'uri'
+	}
 	arrayOfStrings {
 		type array
 		items { type string }
@@ -29,23 +33,16 @@ definitions {
 
 additionalProperties false
 properties {
-	'@context' {
-		type string
-		format 'uri'
-	}
-	'@vocab' {
-		type string
-		format 'uri'
-	}
-	allow { 
-		type string
-		format 'uri'
-	}	
+	'@context' { $ref '#/definitions/uri' }
+	'@vocab' { $ref '#/definitions/uri' }
+	allow { $ref '#/definitions/uri' }
+	'$schema' { $ref '#/definitions/uri' }
+	license { $ref '#/definitions/uri' }
 	description {  type string }
 	name {  type string }
 	produces { $ref "#/definitions/io" }
 	requires { $ref "#/definitions/io" }
-	vendor { type string }
+	vendor { $ref '#/definitions/uri' }
 	version { type string }
 }
 required "name", "produces", "requires", "version"
