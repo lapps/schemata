@@ -40,15 +40,7 @@ properties {
     metadata { $ref '#/definitions/map' }
     views {
         type array
-        items {
-        	type object
-	        properties {
-    	        metadata { $ref '#/definitions/map' }
-        	    annotations { $ref '#/definitions/annotations' }
-        	}
-        	additionalProperties false
-        	required 'annotations'
-        }
+        items { $ref '#/definitions/view' }
     }
 }
 
@@ -60,6 +52,19 @@ definitions {
     map {
         type object
         additionalProperties true
+    }
+    
+    // A View contains an id, a list of annotations, and possibly 
+    // some metadata.
+    view {
+		type object
+		properties {
+			id { type string }
+			metadata { $ref '#/definitions/map' }
+			annotations { $ref '#/definitions/annotations' }
+		}
+		additionalProperties false
+		required 'id', 'annotations'
     }
     
     // An array of annotations.
