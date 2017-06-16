@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "LAPPS LIST Request",
+    "description": "LIST request sent to LAPPS DataSource to obtain a list of artifact ID values.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "discriminator": {
+            "type": "string",
+            "format": "uri"
+        },
+        "token": {
+            "$ref": "http://vocab.lappsgrid.org/schema/token-schema.json"
+        },
+        "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "start": {
+                    "type": "integer"
+                },
+                "end": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "start",
+                "end"
+            ]
+        }
+    },
+    "required": [
+        "discriminator"
+    ]
+}

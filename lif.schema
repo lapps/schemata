@@ -40,15 +40,7 @@ properties {
     metadata { $ref '#/definitions/map' }
     views {
         type array
-        items {
-        	type object
-	        properties {
-    	        metadata { $ref '#/definitions/map' }
-        	    annotations { $ref '#/definitions/annotations' }
-        	}
-        	additionalProperties false
-        	required 'annotations'
-        }
+        items { $ref '#/definitions/view' }
     }
 }
 
@@ -62,6 +54,19 @@ definitions {
         additionalProperties true
     }
     
+    // A View contains an id, a list of annotations, and possibly 
+    // some metadata.
+    view {
+		type object
+		properties {
+			id { type string }
+			metadata { $ref '#/definitions/map' }
+			annotations { $ref '#/definitions/annotations' }
+		}
+		additionalProperties false
+		required 'id', 'annotations'
+    }
+    
     // An array of annotations.
     annotations {
         type array
@@ -73,13 +78,18 @@ definitions {
     	type object
     	properties {
 			id { type string }
+			'@type' { type string }
+			type { type string }
 			label { type string }
-			start { type integer; minimum 0 }
-			end { type integer; minimum 0 }
+			start { 
+				type integer 
+				minimum(-1) 
+			}
+			end { type integer; minimum(-1) }
 			features { $ref '#/definitions/map' }
 			metadata { $ref '#/definitions/map' }
 		}
-        required 'id', 'label'
+        required 'id', '@type'
         additionalProperties false
     }
 }
