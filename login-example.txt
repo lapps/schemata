@@ -1,5 +1,0 @@
-/* The script used to generate an example login request. */
-
-username 'keith'
-password 'password'
-resourceId 'MASC-3.0.0'

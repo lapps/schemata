@@ -6,6 +6,10 @@ type object
 additionalProperties false
 properties {
 	discriminator { type string; format 'uri' }
-	payload { $ref schema.lif }
+	payload { ref lif.schema }
+	parameters {
+		type object
+		additionalProperties true
+	}
 }
 required 'discriminator', 'payload'

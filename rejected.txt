@@ -1,3 +1,0 @@
-/* Script used to generate an example response to an invalid login. */
-code 403
-reason "User has been banned."
