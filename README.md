@@ -19,3 +19,5 @@ There are currently two schemata:
 the LAPPS Interchange Format for objects exchanged by LAPPS web services.
 2. **metadata.schema** <br/>
 the LAPPS Metadata Format for objects returned by calls to `getMetadata()`.
+
+The first one is available on the vocabulary website at http://vocab.lappsgrid.org/schema/lif-schema.
