@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "LAPPS Service Metadata",
+    "description": "Metadata about LAPPS services",
+    "type": "object",
+    "definitions": {
+        "encoding": {
+            "type": "string"
+        },
+        "arrayOfStrings": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "io": {
+            "type": "object",
+            "properties": {
+                "annotations": {
+                    "$ref": "#/definitions/arrayOfStrings"
+                },
+                "encoding": {
+                    "$ref": "#/definitions/encoding"
+                },
+                "format": {
+                    "$ref": "#/definitions/arrayOfStrings"
+                },
+                "language": {
+                    "$ref": "#/definitions/arrayOfStrings"
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false,
+    "properties": {
+        "@context": {
+            "type": "string",
+            "format": "uri"
+        },
+        "@vocab": {
+            "type": "string",
+            "format": "uri"
+        },
+        "allow": {
+            "type": "string",
+            "format": "uri"
+        },
+        "description": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "produces": {
+            "$ref": "#/definitions/io"
+        },
+        "requires": {
+            "$ref": "#/definitions/io"
+        },
+        "vendor": {
+            "type": "string"
+        },
+        "version": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "name",
+        "produces",
+        "requires",
+        "version"
+    ]
+}
