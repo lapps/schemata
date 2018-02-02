@@ -1,6 +1,8 @@
 /*
  * A JSON Schema DSL for the metadata objects produced by LAPPS services
  * to describe themselves.
+ * 
+ * Version: 1.1.0-RC1
  */
  
 title "LAPPS Service Metadata"
@@ -45,4 +47,4 @@ properties {
 	vendor { $ref '#/definitions/uri' }
 	version { type string }
 }
-required "name", "produces", "requires", "version"
+required '$schema', "name", "produces", "requires", "version"

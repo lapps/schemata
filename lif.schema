@@ -5,6 +5,7 @@
  * Each LIF object consists of some metadata, a text, and an ordered list of views, where
  * a view is a collection of annotations and (optionally) some metadata.
  *
+ * Version: 1.1.0-RC1
  */
 
 title "LAPPS Interchange Format"
@@ -12,6 +13,7 @@ description "The JSON-LD objects exchanged by LAPPS web services."
 type object
 additionalProperties false
 properties {
+	'$schema' { $ref '#/definitions/uri' }
 	'@context' {
 		oneOf([
 			{
@@ -43,11 +45,18 @@ properties {
         items { $ref '#/definitions/view' }
     }
 }
+required '$schema', 'text'
 
 /*
  * Definitions of the object referenced above.
  */
 definitions {
+	// A string value formatted as a URI.
+	uri {
+		type string
+		format 'uri'
+	}
+	
     // A HashMap. Used to store metadata at various levels.
     map {
         type object
@@ -79,7 +88,6 @@ definitions {
     	properties {
 			id { type string }
 			'@type' { type string }
-			type { type string }
 			label { type string }
 			start { 
 				type integer 

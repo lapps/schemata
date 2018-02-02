@@ -1,7 +1,7 @@
 /*
  * The LAX Schema for metadata returned by DataSources.
  *
- * version: 1.0.0
+ * Version: 1.1.0-RC1
  */
  
 title 'DataSource Metadata'
@@ -28,7 +28,7 @@ properties {
 	}
 	size { type integer; minimum 0 }
 }
-required 'name', 'vendor', 'version', 'allow', 'license'
+required '$schema', 'name', 'vendor', 'version', 'allow', 'license'
 definitions {
 	uri {
 		type string
