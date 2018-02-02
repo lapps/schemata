@@ -1,16 +1,18 @@
 #!/bin/bash
-set -eu
+set -e
 
-DEST=/home/www/anc/LAPPS/vocab/schema
-JSON="lif container datasource service"
-ACTION="get list size execute"
+if [ -z "$1" ] ; then
+	echo "No version number specified."
+	exit 1
+fi
+V=`echo $1 | sed 's/-.*$//'`
+DEST=/home/www/anc/LAPPS/vocab/schema/$V
+echo "Uploading to $DEST"
 
-for schema in $JSON ; do
-	anc-put $schema.schema $DEST
-	anc-put $schema-schema.json $DEST
+for schema in `ls schemata/*.json` ; do
+	anc-put $schema $DEST
+done
+for schema in `ls *.schema` ; do
+	anc-put $schema $DEST
 done
 
-for schema in $ACTION ; do
-	anc-put $schema.schema $DEST/action
-	anc-put $schema-schema.json $DEST/action
-done

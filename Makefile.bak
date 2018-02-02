@@ -1,6 +1,11 @@
 VERSION=1.1.0-RC1
-CC=jsonc -d 4 -p
+JS=jsonc -d 4 -p
 DEST=/home/www/anc/LAPPS/vocab/schema
+SCHEMATA=lif-schema.json container-schema.json datasource-schema.json metadata-schema.json
+
+#.schema .json:
+#	jsonc -d 4 -p -i $@
+	
 
 help:
 	@echo
@@ -8,33 +13,35 @@ help:
 	@echo
 	@echo "       all : generates all JSON Schema"
 	@echo "       lif : a LIF Container"
-	@echo "      data : a LAPPS Data object"
+	@echo "      data : a LAPPS Data object""
 	@echo "datasource : metadata returned by DataSources"
 	@echo "  metadata : metatdata returnd by WebServices"
 	@echo "     clean : deletes all generated schemata"
 	@echo "    upload : uploads schemata to the vocab web site"
 	@echo			
 			
-%.json : %.schema
-	if [ ! -e schemata ] ; then mkdir schemata ; fi
-	$(CC) -o ./schemata/$*-schema-$(VERSION).json $<
-	
-.PHONY: clean
+all: lif container datasource metadata
+
+mkdir:
+	if [ ! -e schemata ] ; then mkdir schemata ; fi 
+
+lif: mkdir
+	$(JS) -o ./schemata/$@-schema-$(VERSION).json $@.schema 
+
+data: mkdir
+	$(JS) -o ./schemata/$@-schema-$(VERSION).json $@.schema 
+
+datasource: mkdir
+	$(JS) -o ./schemata/$@-schema-$(VERSION).json $@.schema 
+
+metadata: mkdir
+	$(JS) -o ./schemata/$@-schema-$(VERSION).json $@.schema 
+
 clean:
 	if [ -e schemata ] ; then rm -rf schemata ; fi
 
-lif: lif.json
-
-data: data.json
-
-metadata: metadata.json
-
-datasource: datasource.json
-
-all: lif data metadata datasource
-
-upload: 
-	./upload.sh $(VERSION)
+upload: $(SCHEMATA)
+	./upload.sh
 
 #token: 
 #	$(JS) -i token.schema -o token.json

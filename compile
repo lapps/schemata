@@ -1,4 +1,9 @@
+#!/usr/bin/env bash
 
-for file in `ls *.schema` ; do
-	echo $file
-done
+cmd=`which jsonc`
+if [ "$cmd" = "" ] ; then
+	curl -H 'Content-type: text/plain' --data-binary @$1 https://api.lappsgrid.org/json-compiler
+else
+	jsonc -p $1
+fi
+
