@@ -40,6 +40,7 @@ properties {
 	allow { $ref '#/definitions/uri' }
 	'$schema' { $ref '#/definitions/uri' }
 	license { $ref '#/definitions/uri' }
+	licenseDesc { type string }
 	description {  type string }
 	name {  type string }
 	produces { $ref "#/definitions/io" }

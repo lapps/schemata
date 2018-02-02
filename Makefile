@@ -36,26 +36,3 @@ all: lif data metadata datasource
 upload: 
 	./upload.sh $(VERSION)
 
-#token: 
-#	$(JS) -i token.schema -o token.json
-
-#lif:
-#	$(JS) -i lif.schema -o lif.json
-	
-#get:
-#	$(JS) -i get.schema -o get.schema
-	
-#lif: lif.json
-
-#get: get.schema
-
-#list: list.schema
-
-#size: size.schema
-
-#getmetadata: getmetadata.schema
-
-#container: container.schema
-
-#execute: execute.schema
-
