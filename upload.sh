@@ -2,13 +2,16 @@
 set -e
 
 #
-# This script assumes that $USER has an account on anc.org with their
-# ssh key installed so that passwordless SSH connections work.
+# This script assumes that $USER has an account on anc.org with
+# their ssh key installed so the passwordless SSH connections
+# work.
 #
 if [ -z "$1" ] ; then
 	echo "No version number specified."
 	exit 1
 fi
+
+# Strip any qualifiers from the end of the version string.
 V=`echo $1 | sed 's/-.*$//'`
 DEST=/home/www/anc/LAPPS/vocab/schema/$V
 echo "Uploading to $DEST"
