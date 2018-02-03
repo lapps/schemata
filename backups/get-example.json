@@ -1,8 +1,0 @@
-{
-    "discriminator": "http://vocab.lappsgrid.org/ns/get",
-    "token": {
-        "uuid": "c24e9773-963a-40e6-bca2-42f126964d8d",
-        "issuer": "http://www.anc.org"
-    },
-    "payload": "MASC3-0001"
-}
