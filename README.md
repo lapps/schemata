@@ -48,9 +48,12 @@ $> make
 S> make upload
 ```
 
+**NOTE**<br/>
+For the `make upload` goal to succeed the $USER must have an account on the anc.org server with their ssh key installed to allow a passwordless SSH connection.
+
 ### Compile script
 
-Use the `compile` script to compile a single schema files.  The `compile` script will use the [https://api.lappsgrid.org/json-compile](https://api.lappsgrid.org/json-compile) service is the `jsonc` command can not be found on the $PATH.
+Use the `compile` script to compile a single schema files.  The `compile` script will use the [https://api.lappsgrid.org/json-compile](https://api.lappsgrid.org/json-compile) service if the `jsonc` command can not be found on the $PATH.
 
 ```
 $> ./compile lif.schema
