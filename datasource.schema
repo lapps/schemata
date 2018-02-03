@@ -17,6 +17,7 @@ properties {
 	format { $ref '#/definitions/arrayOfString' }
 	allow { $ref '#/definitions/uri' }
 	license { $ref '#/definitions/uri' }
+	licenseDesc { type string }
 	language { $ref '#/definitions/arrayOfString' }
 	encoding { type string }		
 	annotations {
