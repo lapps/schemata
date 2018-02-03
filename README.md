@@ -3,19 +3,55 @@ LAPPS Schemata
 
 JSON Schemata for JSON objects exchanged by LAPPS web services
 
-These schema use the LAPPS Alternate Syntax (LAX), a simplified syntax for JSON schema, and must be compiled with the schema compiler at https://github.com/oanc/org.anc.json.schema-compiler
+These schema use the LAPPS Alternate Syntax (LAX), a simplified syntax for JSON schema, and must be compiled with the [schema compiler](http://downloads.lappsgrid.org/jsonc-latest.tgz).
 
-Schemata may also be compiled with the online schema compiler service.
+Schemata may also be compiled with the online JSON compiler service.
 
 ```bash
-curl -H "Content-type: text/plain" --data-binary @lif.schema http://grid.anc.org:9080/json-compiler
+curl -H "Content-type: text/plain" --data-binary @lif.schema https://api.lappsgrid.org/json-compiler
 ```
 
-**Note** When using *curl* to POST the data the `--data-binary` must be used as using `-d` or `--data` will strip newline characters in the file.
+**Note** When using *curl* to POST the schema file the `--data-binary` option MUST be used as `-d` or `--data` strips newline characters.
 
-There are currently two schemata:
+## Schema files
 
+1. **data.schema** <br/>
+a LAPPS [Data](http://wiki.lappsgrid.org/org.lappsgrid.serialization/groovydoc/org/lappsgrid/serialization/Data.html) object.
 1. **lif.schema** <br/>
-the LAPPS Interchange Format for objects exchanged by LAPPS web services.
-2. **metadata.schema** <br/>
-the LAPPS Metadata Format for objects returned by calls to `getMetadata()`.
+the [LAPPS Interchange Format](http://wiki.lappsgrid.org/org.lappsgrid.serialization/groovydoc/org/lappsgrid/serialization/lif/Container.html) for objects exchanged by LAPPS web services.
+1. **metadata.schema** <br/>
+the metadata returned by LAPPS [SOAP services](http://wiki.lappsgrid.org/org.lappsgrid.api/apidocs/org/lappsgrid/api/ProcessingService.html).
+1. **datasource.schema** <br/>
+the metdadata returned by LAPPS [DataSource](http://wiki.lappsgrid.org/org.lappsgrid.api/apidocs/org/lappsgrid/api/DataSource.html) services.
+
+## Building
+
+Use the `Makefile` to build one or more of the JSON schema files.  The output files will be written to the `schemata` directory.
+
+### Make goals
+
+* **all**<br/>
+builds all the JSON Schema files. This is the default goal.
+* **lif**<br/>
+**data**<br/>
+**metadata**<br/>
+**datasource**<br/>
+builds one of the schema files
+* **upload**<br/>
+uploads the generated schema files to the http://vocab.lappsgrid.org web site.
+* **clean**<br/>
+deletes all build artifacts
+
+```
+$> make clean
+$> make
+S> make upload
+```
+
+### Compile script
+
+Use the `compile` script to compile a single schema files.  The `compile` script will use the [https://api.lappsgrid.org/json-compile](https://api.lappsgrid.org/json-compile) service is the `jsonc` command can not be found on the $PATH.
+
+```
+$> ./compile lif.schema
+``` 
