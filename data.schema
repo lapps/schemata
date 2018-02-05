@@ -4,7 +4,7 @@ type object
 additionalProperties false
 properties {
 	discriminator { type string; format 'uri' }
-	payload { ref lif.schema }
+	payload { type string }
 	parameters {
 		type object
 		additionalProperties true
