@@ -1,5 +1,3 @@
-include 'Config.groovy'
-
 title 'LIF Container'
 description 'A JSON Container object in the LAPPS Interchange Format.'
 type object
