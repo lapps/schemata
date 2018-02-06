@@ -2,4 +2,5 @@
 *.log
 *.ipr
 *.iws
+*.iml
 schemata/
