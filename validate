@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+function validate_local() {
+	jsonv -s $1
+}
+
+function validate_remote() {
+	curl -H "Content-type: text/plain" --data-binary @$1 https://api.lappsgrid.org/validate/schema
+}
+
+validate="validate_local"
+cmd=`which jsonv`
+if [ "$1" == "-remote" ] ; then
+	validate="validate_remote"
+	shift
+elif [ -z "$cmd" ] ; then
+	validate="validate_remote"
+fi 
+
+for schema in `ls *.schema` ; do
+	echo "Validating $schema"
+	$validate $schema
+done
