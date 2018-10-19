@@ -52,4 +52,3 @@ There wasn't really any versioning before 1.1.0 and changes were not explicitly 
 
 For convenience we decided that everything before 1.1.0 is version 1.0.0.
 
-
