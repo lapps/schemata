@@ -42,9 +42,9 @@ the metdadata returned by LAPPS DataSource services.
 
 ## Version 1.0.0 - Everything before 2017-06-27
 
-There wasn't really any versioning before 2.0 and changes were not explicitly logged.
+There wasn't really any versioning before 1.1.0 and changes were not explicitly logged.
 
-For convenience we decided that everything before 2.0 is version 1.0.
+For convenience we decided that everything before 1.1.0 is version 1.0.0.
 
 
 
