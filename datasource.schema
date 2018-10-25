@@ -1,7 +1,7 @@
 /*
  * The LAX Schema for metadata returned by DataSources.
  *
- * Version: 1.1.0-RC1
+ * Version: 2.0.0-RC1
  */
  
 title 'DataSource Metadata'

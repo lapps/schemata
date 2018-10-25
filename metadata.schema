@@ -2,7 +2,7 @@
  * A JSON Schema DSL for the metadata objects produced by LAPPS services
  * to describe themselves.
  * 
- * Version: 1.1.0-RC1
+ * Version: 2.0.0-RC1
  */
  
 title "LAPPS Service Metadata"
