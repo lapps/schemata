@@ -35,6 +35,11 @@ the metadata returned by LAPPS SOAP services.
 * Changed schema definition file name (`service.schema` -> `metadata.schema`) [schemata@213728](https://github.com/lapps/schemata/commit/21372890ef2321b01767dfb10f02809f8db5bd5b#diff-2a24b82a760b8597098c2158a3ca8c1f)
 * `$schema` is a required field [schemata@213728](https://github.com/lapps/schemata/commit/21372890ef2321b01767dfb10f02809f8db5bd5b#diff-2a24b82a760b8597098c2158a3ca8c1fR50)
 * Added `licenseDesc` for restructure-d tool license information [schemata@21b312](https://github.com/lapps/schemata/commit/21b312f6760af9b6e3b112300d9fd934d622b811#diff-2a24b82a760b8597098c2158a3ca8c1fR43)
+    * Related issues: 
+        * diff btw license and licenseDesc lapps/schemata/issues#3
+        * updating java representation lapps/org.lappsgrid.annotations#7 & lapps/org.lappsgrid.metadata#9
+* Adding `tagSet` field to `IOSpecification` class was discussed in lapps/org.lappsgrid.metadata#9 and lapps/org.lappsgrid.metadata#10, but never implemented. 
+    * Adding `tagSet` has a problem with a tool that generated two or more annotations with at least one annotation type that requires a "tag set". See lapps/org.lappsgrid.metadata#10 for discussion. 
 
 ### datasource-schema
 the metdadata returned by LAPPS DataSource services.
