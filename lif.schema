@@ -5,7 +5,11 @@
  * Each LIF object consists of some metadata, a text, and an ordered list of views, where
  * a view is a collection of annotations and (optionally) some metadata.
  *
- * Version: 1.1.0-RC1
+ * Version 2.0-RC1
+ *
+ * This file is maintained with changelog and versioning information in the repository at
+ * https://github.com/lapps/schemata.
+ *
  */
 
 title "LAPPS Interchange Format"

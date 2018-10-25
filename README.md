@@ -18,7 +18,8 @@ curl -H "Content-type: text/plain" --data-binary @lif.schema https://api.lappsgr
 1. **data.schema** <br/>
 a LAPPS [Data](http://wiki.lappsgrid.org/org.lappsgrid.serialization/groovydoc/org/lappsgrid/serialization/Data.html) object.
 1. **lif.schema** <br/>
-the [LAPPS Interchange Format](http://wiki.lappsgrid.org/org.lappsgrid.serialization/groovydoc/org/lappsgrid/serialization/lif/Container.html) for objects exchanged by LAPPS web services.
+<<<<<<< HEAD
+the [LAPPS Interchange Format](http://wiki.lappsgrid.org/org.lappsgrid.serialization/groovydoc/org/lappsgrid/serialization/lif/Container.html) for objects exchanged by LAPPS web services. Available on the vocabulary website at http://vocab.lappsgrid.org/schema/lif-schema.
 1. **metadata.schema** <br/>
 the metadata returned by LAPPS [SOAP services](http://wiki.lappsgrid.org/org.lappsgrid.api/apidocs/org/lappsgrid/api/ProcessingService.html).
 1. **datasource.schema** <br/>
