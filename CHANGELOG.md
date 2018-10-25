@@ -6,6 +6,7 @@ All notable changes to the schemata will be documented in this file.
 
 * Landing place for TCF ([#2](https://github.com/lapps/schemata/issues/2))
 * `label` key for `annotation` is obsolete and will be dropped or renamed (for visualizers) later than 1.1.0
+* Adding a top-level field for version-controlling vocabulary used in a LIF [lapps/org.lappsgrid.serialization/#43#issuecomment-367820827](https://github.com/lapps/org.lappsgrid.serialization/issues/43#issuecomment-367820827)
 
 ## Version 1.1.0  work in progress
 
