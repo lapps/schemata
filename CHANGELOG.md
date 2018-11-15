@@ -41,8 +41,7 @@ the metadata returned by LAPPS SOAP services.
     * Related issues: 
         * diff btw license and licenseDesc: [lapps/schemata#3](https://github.com/lapps/schemata/issues/3)
         * updating java representation [lapps/org.lappsgrid.annotations#7](https://github.com/lapps/org.lappsgrid.annotations/issues/7) & [lapps/org.lappsgrid.metadata#9](https://github.com/lapps/org.lappsgrid.metadata/issues/9)
-* Adding `tagSet` field to `IOSpecification` class was discussed in [lapps/org.lappsgrid.metadata#9](https://github.com/lapps/org.lappsgrid.metadata/issues/9) and [lapps/org.lappsgrid.metadata#10](https://github.com/lapps/org.lappsgrid.metadata/issues/10), but never implemented. 
-    * Adding `tagSet` has a problem with a tool that generates two or more annotations with at least one annotation type that requires a "tag set". See [lapps/org.lappsgrid.metadata#10](https://github.com/lapps/org.lappsgrid.metadata/issues/10) for discussion. 
+* Added `tagSets` to the IOSpecification (produces/requires) [schemata@875c568](https://github.com/lapps/schemata/commit/875c5687606387212b1004fbe81e984452a18a12)
 
 ### datasource-schema
 the metdadata returned by LAPPS DataSource services.
