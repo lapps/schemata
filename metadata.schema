@@ -52,5 +52,7 @@ properties {
 	requires { $ref "#/definitions/io" }
 	vendor { $ref '#/definitions/uri' }
 	version { type string }
+	toolVersion { type string }
 }
+
 required '$schema', "name", "produces", "requires", "version"
