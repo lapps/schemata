@@ -6,7 +6,9 @@ All notable changes to the schemata will be documented in this file.
 
 * Landing place for TCF ([#2](https://github.com/lapps/schemata/issues/2))
 * `label` key for `annotation` is obsolete and will be dropped or renamed (for visualizers) later than 1.1.0
-* Adding a top-level field for version-controlling vocabulary used in a LIF [lapps/org.lappsgrid.serialization/#43#issuecomment-367820827](https://github.com/lapps/org.lappsgrid.serialization/issues/43#issuecomment-367820827)
+* Adding a top-level field for version-controlling vocabulary used in a LIF [lapps/org.lappsgrid.serialization/#43#issuecomment-367820827](https://github.com/lapps/org.lappsgrid.serialization/issues/43#issuecomment-367820827) and [https://github.com/lapps/vocabulary-pages#63#issuecomment-437217430](https://github.com/lapps/vocabulary-pages/issues/63#issuecomment-437217430)
+* Adding `timestamp` and `dependesOn` to `contains` metadata - this is not necessary after all as the contains metadata is just a map and an arbitrary key-value can be added without being speifed through the schema. (See [#6](https://github.com/lapps/schemata/issues/6) for related discussion)
+
 
 ## Version 1.1.0  work in progress
 
