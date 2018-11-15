@@ -42,6 +42,7 @@ the metadata returned by LAPPS SOAP services.
         * diff btw license and licenseDesc: [lapps/schemata#3](https://github.com/lapps/schemata/issues/3)
         * updating java representation [lapps/org.lappsgrid.annotations#7](https://github.com/lapps/org.lappsgrid.annotations/issues/7) & [lapps/org.lappsgrid.metadata#9](https://github.com/lapps/org.lappsgrid.metadata/issues/9)
 * Added `tagSets` to the IOSpecification (produces/requires) [schemata@875c568](https://github.com/lapps/schemata/commit/875c5687606387212b1004fbe81e984452a18a12)
+* Added `toolVersion` [schemata@2518fc](https://github.com/lapps/schemata/commit/2518fc73bd0e417bdc35b3b9e2ea31ef7542e929)
 
 ### datasource-schema
 the metdadata returned by LAPPS DataSource services.
