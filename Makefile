@@ -1,10 +1,10 @@
-VERSION=1.1.0
+VERSION=$(shell cat VERSION)
 CC=jsonc -d 4 -p
 DEST=/home/www/anc/LAPPS/vocab/schema
 
 %.json : %.schema
 	if [ ! -e schemata ] ; then mkdir schemata ; fi
-	$(CC) -o ./schemata/$*-schema-$(VERSION).json $<
+	$(CC) -o ./schemata/$*-schema.json $<
 
 all: lif data metadata datasource
 	
