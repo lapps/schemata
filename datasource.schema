@@ -1,0 +1,45 @@
+/*
+ * The LAX Schema for metadata returned by DataSources.
+ *
+ * Version: 2.0.0-RC1
+ */
+ 
+title 'DataSource Metadata'
+description 'LAX Schema for metadata returned by DataSources.'
+additionalProperties false
+type object
+properties {
+	$schema { $ref '#/definitions/uri' }
+	name { type string }
+	vendor { $ref '#/definitions/uri' }	
+	version { type string }
+	description { type string }
+	format { $ref '#/definitions/arrayOfString' }
+	allow { $ref '#/definitions/uri' }
+	license { $ref '#/definitions/uri' }
+	licenseDesc { type string }
+	language { $ref '#/definitions/arrayOfString' }
+	encoding { type string }		
+	annotations {
+		type array
+		items {
+			type object
+			additionalProperties true
+		}
+	}
+	size { type integer; minimum 0 }
+}
+required '$schema', 'name', 'vendor', 'version', 'allow', 'license'
+definitions {
+	uri {
+		type string
+		format 'uri'
+	}
+	arrayOfString {
+		type array
+		items {
+			type string
+		}
+	}
+}
+

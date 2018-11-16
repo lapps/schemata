@@ -1,2 +1,6 @@
 *.json
 *.log
+*.ipr
+*.iws
+*.iml
+schemata/
