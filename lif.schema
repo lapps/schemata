@@ -106,10 +106,6 @@ definitions {
 			metadata { $ref '#/definitions/map' }
 		}
         required 'id', '@type'
-        anyOf ([
-            { required 'start', 'end' },
-            { required 'targets' }
-        ])
         additionalProperties false
     }
 }
